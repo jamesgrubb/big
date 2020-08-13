@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html, body{
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    grid-template-areas: 
+        "A B C D"
+        "E F G H"
+        "I J K L"
+    ;
+    perspective: 600px;
+}
+
+img{
+    width: 100%;
+}
+
+.card{
+    display: contents;
+    transform-style: preserve-3d;
+    width: calc(100vw / 4);
+    height: calc(100vw / 4);
+}
+
+.card-face{
+    backface-visibility: hidden;
+}
+
+.front, .back{
+    width: calc(100vw / 4);
+    height: calc(100vw / 4);
+    
+}
+
+.front{
+    grid-area: var(--front);
+    background: var(--james);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.back{
+    grid-area: var(--back);
+    background: var(--staff);
+    background-size: cover;
+    
+}
