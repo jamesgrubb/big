@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,12 +6,63 @@
     list-style: none;
 }
 
+:root{
+    --color-green: #1ac081;
+}
+
 html, body{
     height: 100%;
 }
 
-.container{
+body{
+    font-family: Mulish, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1{
+    font-weight: 900;
+    font-family: "Gotham A", "Gotham B";
+    font-style: normal;
+    font-weight: 700;
+    
+}
+
+.cover{
+    height: 40vh;
+    max-height: 600px;
     display: grid;
+    place-items: center;
+
+}
+.cover__title{
+    color: var(--color-green);
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    align-items: center;
+}
+
+@media screen and (min-width: 80ch){
+    .cover__title{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        grid-gap: 1em;
+    }
+    
+}
+
+.cover__title span.big svg{
+    width: min(400px,20vw);    
+    color:var(--color-green);     
+}
+.wrapper{
+    height: 200vh;
+}
+.container{
+    perspective: 1000px;
+    display: grid;
+    overflow: visible;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: min-content;
     grid-template-areas: 
@@ -18,7 +70,7 @@ html, body{
         "E F G H"
         "I J K L"
     ;
-    perspective: 600px;
+    
 }
 
 img{
@@ -26,33 +78,61 @@ img{
 }
 
 .card{
-    display: contents;
+    grid-area: var(--front);
     transform-style: preserve-3d;
     width: calc(100vw / 4);
     height: calc(100vw / 4);
+    position: relative;
+    overflow: visible;
+
 }
 
-.card-face{
+.card__face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-.front, .back{
-    width: calc(100vw / 4);
-    height: calc(100vw / 4);
-    
-}
 
-.front{
-    grid-area: var(--front);
+.card__face--front{    
     background: var(--james);
-    background-size: cover;
-    background-attachment: fixed;
-    
+    background-size: cover;    
 }
 
-.back{
-    grid-area: var(--back);
+
+.card__face--back {
     background: var(--staff);
     background-size: cover;
-    
+    transform: rotateY(180deg);
+    /* display: none; */
+}
+
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-auto-rows: min(500px,50vh);
+}
+
+.gallery__image{
+    object-fit: cover;
+}
+
+.gallery__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: red;
+}
+
+.footer{
+    text-align: center;
+    padding: 2em;
+    font-size: 1.8rem;
+    color: var(--color-green);
+    font-weight: 600;
 }

@@ -1,15 +1,11 @@
 ---
 layout: base.njk
-title: Next Big Thing
 ---
-{% set position = ["A","B","C","D","E","F","G","H","I","J","K","L"] %}
-<h1>{{ title | safe }}</h1>
-<h2>Subtitle old</h2>
+
 <ul class="container">
-    {% for image in collections.gallery  %}
-        <div class="card" style="--front:{{position[loop.index0]}}">
-            <div class="card-face front" style="--front:{{position[loop.index0]}}; --james:url('../images/james.jpg')"></div>
-            <div class="card-face back" style="--back:{{position[loop.index0]}}; --staff:url('../{{image}}')"></div>
-        </div>
-    {% endfor %}
+
+
+    {% include "_james.njk" %}
+
+
 </ul>

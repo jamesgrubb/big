@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6243072/7248612/css/fonts.css" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body style="color: red">
+<body>
+    <div class="wrapper">
+        {% include "_header.njk" %}
     {{ content | safe }}
-    
+    {% include "_gallery.njk" %}
+    {% include "_footer.njk" %}
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js" defer></script>
     <script type="module" src="./js/main.js" defer></script>

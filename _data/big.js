@@ -16,6 +16,7 @@ module.exports = async () => {
                 console.log(error)
 
             })
+        console.log(data.resources)
         return data.resources
     }
     catch (error) {

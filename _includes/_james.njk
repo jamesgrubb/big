@@ -1,0 +1,7 @@
+{% set position = ["A","B","C","D","E","F","G","H","I","J","K","L"] %}
+{% for james in collections.james %}
+    <div class="card" style="--front:{{position[loop.index0]}}">
+        <div class="card__face card__face--front" style="--front:{{position[loop.index0]}}; --james:url('../{{james}}')"></div>
+        <div class="card__face card__face--back" style="--back:{{position[loop.index0]}}; --staff:url('../{{collections.gallery[loop.index0]}}')"></div>
+    </div>
+{% endfor %}

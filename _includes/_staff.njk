@@ -1,0 +1,4 @@
+{% set position = ["A","B","C","D","E","F","G","H","I","J","K","L"] %}
+{% for image in collections.gallery  %}
+    <div class="card-face back" style="--back:{{position[loop.index0]}}; --staff:url('../{{image}}')"></div>
+{% endfor %}
