@@ -31,13 +31,16 @@ h1{
     max-height: 600px;
     display: grid;
     place-items: center;
+    grid-gap: 1em;
 
 }
 .cover__title{
     color: var(--color-green);
-    font-weight: normal;
-    display: flex;
-    flex-direction: column;
+    font-weight: normal;    
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-gap: 1em;
     line-height: 1.1;
     align-items: center;
 }
@@ -47,13 +50,21 @@ h1{
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: max-content;
-        grid-gap: 1em;
+        grid-gap: 0.8em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+        grid-auto-rows: min(500px,50vh);
     }
     
 }
 
 .cover__title span.big svg{
-    width: min(400px,20vw);    
+    width: min(200px,20vw);    
     color:var(--color-green);     
 }
 .wrapper{
@@ -115,7 +126,7 @@ img{
 .gallery{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-    grid-auto-rows: min(500px,50vh);
+    grid-auto-rows: 1fr;
 }
 
 .gallery__image{
