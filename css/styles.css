@@ -38,12 +38,14 @@ h1{
     color: var(--color-green);
     font-weight: normal;    
     display: grid;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    grid-gap: 1em;
+    grid-gap: 10px;
     line-height: 1.1;
     align-items: center;
+    justify-items: center;
+    
 }
+
+
 
 @media screen and (min-width: 80ch){
     .cover__title{
@@ -65,7 +67,8 @@ h1{
 
 .cover__title span.big svg{
     width: min(200px,20vw);    
-    color:var(--color-green);     
+    color:var(--color-green); 
+    margin-top: 0.3em;    
 }
 .wrapper{
     height: 200vh;
